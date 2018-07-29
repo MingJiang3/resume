@@ -7,14 +7,16 @@
   <script src="//at.alicdn.com/t/font_764409_v8rjz10njnd.js"></script>
   <style type="text/css">
     .icon {
-       width: 1em; height: 1em;
-       vertical-align: -0.15em;
-       fill: currentColor;
-       overflow: hidden;
+      width: 1em;
+      height: 1em;
+      vertical-align: -0.15em;
+      fill: currentColor;
+      overflow: hidden;
     }
-</style>
-</style>
+  </style>
+  </style>
 </head>
+
 <body>
   <!-- 顶部导航 -->
   <div class="topNavBar">
@@ -55,7 +57,7 @@
   <div class="banner">
     <div class="mask"></div>
   </div>
-  <main>
+  <main style="margin-top: -370px">
     <!-- 主要资料 -->
     <div class="usercard">
       <div class="pictureAndText clearfix">
@@ -83,45 +85,76 @@
       </div>
       <footer class="media">
         <a href="#">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-jianshu_circle"></use>
-            </svg>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-jianshu_circle"></use>
+          </svg>
         </a>
         <a href="#">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-github"></use>
-            </svg>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-github"></use>
+          </svg>
         </a>
         <a href="#">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-weixin"></use>
-            </svg>
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-weixin"></use>
+          </svg>
         </a>
         <a href="#">
-            <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-weibo"></use>
-            </svg>
-        </a>     
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-weibo"></use>
+          </svg>
+        </a>
       </footer>
     </div>
-
-    <a class="button" href="#">下载简历</a>
-
-    <p>
-      李名江， 前端工程师。
-      <br> 技能：前端开发，Rails 开发，Node.js 开发
+    <p id="downloadResume-wrapper">
+      <a class="downloadResume" href="#" target="_blank" download>DOWNLOAD RESUME</a>
     </p>
-
+    <!-- 技能 -->
   </main>
-  <section>
+  <section class="skills">
     <h2>技能</h2>
-    <ol>
-      <li>HTML 5 &amp; CSS 3</li>
-      <li>JavaScript</li>
-      <li>jQuery</li>
-      <li>Vue</li>
-      <li>React</li>
-      <li>HTTP</li>
+    <ol class="clearfix">
+      <li>
+        <h3>HTML 5 &amp; CSS 3</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+      <li>
+        <h3>JavaScript</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+      <li>
+        <h3>jQuery</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+
+      <li>
+        <h3>Vue.js</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+
+      <li>
+        <h3>HTTP</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+
+      <li>
+        <h3>React.js</h3>
+        <div class="progressBar">
+          <div class="progress"></div>
+        </div>
+      </li>
+
+
     </ol>
   </section>
   <section>
@@ -141,6 +174,16 @@
     </div>
 
   </section>
+
+
+
+
+
+  <li>JavaScript</li>
+  <li>jQuery</li>
+  <li>Vue</li>
+  <li>React</li>
+  <li>HTTP</li>
 </body>
 
 </html>

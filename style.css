@@ -6,9 +6,15 @@ a{
     text-decoration: none;
     color: inherit;  
 }
+/* h1,h2,h3,h4,h5,h6{
+    font-weight: none;
+} */
 *{
     margin: 0;
     padding: 0;
+}
+ol,ul{
+    list-style: none;
 }
 hr{
     height: 0;
@@ -85,6 +91,8 @@ hr{
     /* border: 1px solid red; */
 }
 .usercard{
+    box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.5);
+
     /* border: 1px solid red; */
     max-width: 940px;
     margin-right: auto;
@@ -166,3 +174,68 @@ hr{
     fill: white;
     vertical-align: top;
 }
+.downloadResume{
+    border: 1px solid #b9b9b9;
+    background: #efefef;
+    font-size: 15px;
+    line-height: 16px;
+    padding: 21px 55px;
+    font-weight: bold;
+    font-family: open sans;
+    border-radius: 3px;
+    color: #464d59;
+}
+.downloadResume:hover{
+    box-shadow: 0px 4px 13px 0px rgba(0,0,0,0.5);
+    transition: box-shadow 0.3s;
+}
+#downloadResume-wrapper{
+    text-align: center;
+    padding-top: 58px;
+}
+section.skills{
+    max-width: 940px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 87px;
+
+}
+section.skills > h2 {
+    text-align: center;
+    color: #3d4451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 600;
+}
+section.skills > h2 > h3 {
+
+}
+section.skills > ol {
+    background: #ffffff;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+    padding: 42px 50px 10px;
+    margin-top: 30px;
+}
+section.skills > ol > li{
+    float: left;
+    width: 47%;
+    box-sizing:border-box;
+}
+section.skills > ol > li:nth-child(even){
+    float: right;
+}
+section.skills .progressBar{
+    height: 3px;
+    /* border: 1px solid red; */
+    background: #fae1e1;
+    border-radius: 2px;
+    margin: 3px 0 38px;
+}
+section.skills .progressBar .progress{
+    height: 3px;
+    background: #e8676b;
+    width: 70%;
+    border-radius: 2px;
+
+}
+
