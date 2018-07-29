@@ -6,9 +6,6 @@ a{
     text-decoration: none;
     color: inherit;  
 }
-/* h1,h2,h3,h4,h5,h6{
-    font-weight: none;
-} */
 *{
     margin: 0;
     padding: 0;
@@ -194,7 +191,7 @@ hr{
     padding-top: 58px;
 }
 section.skills{
-    max-width: 940px;
+    max-width: 930px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 87px;
@@ -207,8 +204,10 @@ section.skills > h2 {
     line-height: 1.2;
     font-weight: 600;
 }
-section.skills > h2 > h3 {
-
+ h3 {
+    font-family: inherit;
+    font-weight: normal;
+    font-size: 13px;
 }
 section.skills > ol {
     background: #ffffff;
@@ -218,24 +217,24 @@ section.skills > ol {
 }
 section.skills > ol > li{
     float: left;
-    width: 47%;
+    width: 48%;
     box-sizing:border-box;
 }
 section.skills > ol > li:nth-child(even){
     float: right;
 }
 section.skills .progressBar{
-    height: 3px;
+    height: 5px;
     /* border: 1px solid red; */
     background: #fae1e1;
     border-radius: 2px;
     margin: 3px 0 38px;
 }
 section.skills .progressBar .progress{
-    height: 3px;
+    height: 5px;
     background: #e8676b;
     width: 70%;
     border-radius: 2px;
-
 }
+
 
