@@ -190,14 +190,16 @@ hr{
     text-align: center;
     padding-top: 58px;
 }
-section.skills{
+section.skills,
+section.portfolio{
     max-width: 930px;
     margin-right: auto;
     margin-left: auto;
     margin-top: 87px;
 
 }
-section.skills > h2 {
+section.skills > h2, 
+section.portfolio > h2 {
     text-align: center;
     color: #3d4451;
     font-size: 34px;
@@ -236,5 +238,68 @@ section.skills .progressBar .progress{
     width: 70%;
     border-radius: 2px;
 }
-
-
+section.portfolio{
+    text-align: center;
+}
+section.portfolio >nav{
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 32px;
+}
+section.portfolio >nav > ol{
+    display: inline-block;
+    vertical-align: top;
+}
+section.portfolio >nav > ol> li{
+    float: left;
+    margin-left: 40px;
+    cursor: pointer;
+}
+section.portfolio >nav > ol> li:first-child{
+    margin-left: 0;
+}
+section.portfolio >nav > .bar{
+    /* border: 1px solid red; */
+    height: 5px;
+    background: white;
+    border-radius: 3px;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+.bar-inner{
+    height: 100%;
+    background: #e6686a;
+    width: 20%;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+section.portfolio >nav > .bar.state-1 .bar-inner{
+    margin-left: 0;
+    width: 35px;
+}
+section.portfolio >nav > .bar.state-2 .bar-inner{
+    margin-left: 67px;
+    width: 42px;
+}
+section.portfolio >nav > .bar.state-3 .bar-inner{
+    margin-left: 140px;
+    width: 93px;
+}
+section.portfolio .works{
+    height: 576px;
+    /* border: 1px solid red; */
+    position: relative;
+}
+section.portfolio .works .big,
+section.portfolio .works .small{
+    position: absolute;
+}
+section.portfolio .works .big{
+    top: 0;
+    left: 0;
+}
+section.portfolio .works .small{
+    top: 0;
+    left: 634px;
+}
