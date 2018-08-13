@@ -23,19 +23,67 @@ hr{
     display: block;
     clear: both;
 }
+/* .loading{
+    width: 200px;
+    height: 200px;
+    position: relative;
+}
+.loading::before,.loading::after{
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    background: black;
+    border-radius: 50%;
+    top: 0;bottom: 0;left: 0;right: 0;
+    margin: auto;
+    animation: s 1.5s linear infinite;
+
+}
+.loading::after{
+    animation-delay: 0.75s;
+}
+@keyframes s{
+    0%{
+        width: 0px; height: 0px; opacity: 1;
+    }
+    100%{
+        width: 100px; height: 100px; opacity: 0;
+    }
+} 
+.welcome{
+    display: none;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    top: 0px; left: 0px; width: 100%; height: 100%;
+    background: #888;
+}
+.welcome.active{
+    display: flex;
+}*/
 .topNavBar{
     /* padding-top: 20px;
     padding-bottom: 20px;
     padding-left: 16px;
     padding-right: 16px; */
+    color: #b7b7b7;
     padding: 20px 0px;
     top: 0px;
     left: 0px;
     width: 100%;
     position: fixed;
+    transition:  all 0.7s;
+}
+.topNavBar.sticky{
+    background: white;
+    padding: 10px 0;
+    z-index: 1;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.25);
+    color: #3d4451;
 }
 .topNavBar .topNavBar-inner{
-    padding:16px;
+    padding:14px;
 }
 .topNavBar nav{
     padding-top: 7px;
@@ -52,7 +100,7 @@ hr{
 }
 .topNavBar nav ul li a{
     font-size: 12px;
-    color: #b7b7b7;
+    color: inherit;
     font-weight: bold;
     padding-top: 5px;
     padding-bottom: 6px;

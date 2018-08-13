@@ -14,12 +14,16 @@
       overflow: hidden;
     }
   </style>
-  </style>
+  <script src="./main.js"></script>
 </head>
 
 <body>
+  <!-- loading等待 -->
+  <!-- <div class="siteWelcome active">
+      <div class="loading"></div>
+  </div> -->
   <!-- 顶部导航 -->
-  <div class="topNavBar">
+  <div id="topNavBar" class="topNavBar">
     <div class="topNavBar-inner clearfix">
       <a class="logo" href="#" alt="logo" style="float: left;">
         <span class="rs">MJ</span>
@@ -57,7 +61,7 @@
   <div class="banner">
     <div class="mask"></div>
   </div>
-  <main style="margin-top: -370px">
+  <main style="margin-top: -352px">
     <!-- 主要资料 -->
     <div class="usercard">
       <div class="pictureAndText clearfix">
@@ -194,7 +198,11 @@
     </div>
 
   </section>
-
+   <script>
+    //   setTimeout(function(){
+    //   siteWelcome.classList.remove('active')
+    // },1000) 
+  </script> 
 
 </body>
 
