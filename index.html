@@ -14,7 +14,6 @@
       overflow: hidden;
     }
   </style>
-  <script src="./main.js"></script>
 </head>
 
 <body>
@@ -29,16 +28,16 @@
         <span class="rs">MJ</span>
         <span class="card">Lee</span>
       </a>
-      <nav style="float: right;">
+      <nav class="menu" style="float: right;">
         <ul class="clearfix">
           <li>
-            <a href="#">关于</a>
+            <a href="#siteAbouut">关于</a>
           </li>
           <li>
-            <a href="#">技能</a>
+            <a href="#siteSkills">技能</a>
           </li>
-          <li>
-            <a class="menuTigger" href="#">作品</a>
+          <li class="menuTigger">
+            <a href="#siteWorks">作品</a>
             <ul class="submenu">
               <li>作品1</li>
               <li>作品2</li>
@@ -68,7 +67,7 @@
   </div>
   <main style="margin-top: -352px">
     <!-- 主要资料 -->
-    <div class="usercard">
+    <div id="siteAbouut" class="usercard">
       <div class="pictureAndText clearfix">
         <div class="picture">
           <img src="./img/startuper-1-299x347.jpg" alt="头像">
@@ -120,7 +119,7 @@
     </p>
     <!-- 技能 -->
   </main>
-  <section class="skills">
+  <section  id="siteSkills" class="skills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -163,11 +162,10 @@
         </div>
       </li>
 
-
     </ol>
   </section>
   <section class="portfolio">
-    <h2>作品集</h2>
+    <h2 id="siteWorks">作品集</h2>
     <nav>
       <ol class="clearfix">
         <li id="portfolio1">所有</li>
@@ -203,11 +201,46 @@
     </div>
 
   </section>
-   <script>
-    //   setTimeout(function(){
-    //   siteWelcome.classList.remove('active')
-    // },1000) 
-  </script> 
+  <script>
+    setTimeout(function(){
+      siteWelcome.classList.remove('active')
+    },1000)
+    window.onscroll = function (scroll) {
+      if (window.scrollY > 0) {
+        topNavBar.classList.add('sticky')
+      } else {
+        topNavBar.classList.remove('sticky')
+      }
+    }
+    let liTags = document.querySelectorAll('nav.menu > ul > li')    //接受一个选择器，返回选择器对应的所有元素
+    //  console.log(liTags);
+    for (let i = 0; i < liTags.length; i++) {
+      liTags[i].onmouseenter = function (x) {
+        // console.log('liTags')
+        x.currentTarget.classList.add('active')
+        // let brother = li.getElementsByTagName('ul')[0]
+        // brother.classList.add('active')
+      }
+      liTags[i].onmouseleave = function (x) {
+        x.currentTarget.classList.remove('active')
+        // let brother = li.getElementsByTagName('ul')[0]
+        // brother.classList.remove('active')
+      }
+    }
+    let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+    for (let i = 0; i < aTags.length; i++) {
+      aTags[i].onclick = function(x){
+         x.preventDefault()        //浏览器阻止默认动作，不自动跳转
+        let a = x.currentTarget
+        let href = (a.getAttribute('href'))   //a.getAttribute('href')获取显示用户写的地址，浏览器不做处理
+        //console.log(a.href)       //a.href是浏览器解析后的地址（带http协议的）
+        let element = document.querySelector(href)      //只获取第一个元素
+        let top = element.offsetTop     //element到页面顶部距离, getBoundingClientRect是element到浏览器顶端距离
+        window.scrollTo(0,top-80)    //滑动到某个位置
+      }
+      
+    }
+  </script>
 
 </body>
 
