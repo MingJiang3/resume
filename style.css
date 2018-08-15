@@ -23,45 +23,6 @@ hr{
     display: block;
     clear: both;
 }
-/* .loading{
-    width: 200px;
-    height: 200px;
-    position: relative;
-}
-.loading::before,.loading::after{
-    content: '';
-    width: 0px;
-    height: 0px;
-    position: absolute;
-    background: black;
-    border-radius: 50%;
-    top: 0;bottom: 0;left: 0;right: 0;
-    margin: auto;
-    animation: s 1.5s linear infinite;
-
-}
-.loading::after{
-    animation-delay: 0.75s;
-}
-@keyframes s{
-    0%{
-        width: 0px; height: 0px; opacity: 1;
-    }
-    100%{
-        width: 100px; height: 100px; opacity: 0;
-    }
-} 
-.welcome{
-    display: none;
-    position: fixed;
-    justify-content: center;
-    align-items: center;
-    top: 0px; left: 0px; width: 100%; height: 100%;
-    background: #888;
-}
-.welcome.active{
-    display: flex;
-}*/
 .topNavBar{
     /* padding-top: 20px;
     padding-bottom: 20px;
@@ -110,7 +71,8 @@ hr{
     border-top: 3px solid transparent;
     display: block; */
 }
-.topNavBar nav ul li.active a::after{
+.topNavBar nav ul li.active a::after,
+.topNavBar nav ul li.highlight a::after{
     /* border-bottom: 3px solid #e06567; */
     content: '';
     display: block;
@@ -153,7 +115,7 @@ hr{
 }
 .topNavBar .submenu > li{
     white-space: nowrap;        /*设计li里的文本显示完再换行 */
-    padding: 5px 10px;
+    padding: 5px 0px;
 }
 .topNavBar .logo{
     font-size: 24px;

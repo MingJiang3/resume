@@ -17,10 +17,6 @@
 </head>
 
 <body>
-  <!-- loading等待 -->
-  <!-- <div class="siteWelcome active">
-      <div class="loading"></div>
-  </div> -->
   <!-- 顶部导航 -->
   <div id="topNavBar" class="topNavBar">
     <div class="topNavBar-inner clearfix">
@@ -67,7 +63,7 @@
   </div>
   <main style="margin-top: -352px">
     <!-- 主要资料 -->
-    <div id="siteAbouut" class="usercard">
+    <div data-x ="" id="siteAbouut" class="usercard">
       <div class="pictureAndText clearfix">
         <div class="picture">
           <img src="./img/startuper-1-299x347.jpg" alt="头像">
@@ -119,7 +115,7 @@
     </p>
     <!-- 技能 -->
   </main>
-  <section id="siteSkills" class="skills">
+  <section data-x id="siteSkills" class="skills">
     <h2>技能</h2>
     <ol class="clearfix">
       <li>
@@ -163,9 +159,10 @@
       </li>
 
     </ol>
+    <!-- 作品集 -->
   </section>
-  <section class="portfolio">
-    <h2 id="siteWorks">作品集</h2>
+  <section data-x id="siteWorks" class="portfolio">
+    <h2>作品集</h2>
     <nav>
       <ol class="clearfix">
         <li id="portfolio1">所有</li>
@@ -201,17 +198,39 @@
     </div>
 
   </section>
-  <script>
-    setTimeout(function () {
-      siteWelcome.classList.remove('active')
-    }, 1000)
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
+  <script>  
+  //鼠标滚动时把顶部导航加sticky
     window.onscroll = function (scroll) {
       if (window.scrollY > 0) {
         topNavBar.classList.add('sticky')
       } else {
         topNavBar.classList.remove('sticky')
       }
+      //滚到哪里顶部导航栏高亮
+    let specialTags = document.querySelectorAll('[data-x]')
+    let minIndex = 0
+    for (let i = 1; i < specialTags.length; i++) {
+      if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+        minIndex = i
+      }
     }
+    console.log(minIndex)
+    for (let i = 0; i < specialTags.length; i++) {
+      specialTags[i].classList.remove('highlight')
+    }
+    specialTags[minIndex].classList.add('highlight')
+    let id = specialTags[minIndex].id
+    console.log (id)
+    let a = document.querySelector('[href = "#' + id + '"]')
+    let li = a.parentNode
+    let brotherAndMe = li.parentNode.children
+    for (let i = 0; i < brotherAndMe.length; i++) {
+      brotherAndMe[i].classList.remove('highlight')
+    }
+    li.classList.add('highlight')
+    }
+    //鼠标移到顶部导航，给li添加active
     let liTags = document.querySelectorAll('nav.menu > ul > li')
     for (let i = 0; i < liTags.length; i++) {
       liTags[i].onmouseenter = function (x) {
@@ -255,7 +274,6 @@
       }
     }
   </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
 </body>
 
 </html>
