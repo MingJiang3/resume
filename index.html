@@ -63,7 +63,7 @@
   </div>
   <main style="margin-top: -352px">
     <!-- 主要资料 -->
-    <div data-x ="" id="siteAbouut" class="usercard">
+    <div data-x="" id="siteAbouut" class="usercard">
       <div class="pictureAndText clearfix">
         <div class="picture">
           <img src="./img/startuper-1-299x347.jpg" alt="头像">
@@ -200,36 +200,47 @@
   </section>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
   <script>  
-  //鼠标滚动时把顶部导航加sticky
+    //添加offset类
+    let specialTags = document.querySelectorAll('[data-x]')
+    for (let i = 0; i < specialTags.length; i++) {
+      specialTags[i].classList.add('offset')
+    }
+    findClosest()
+
+    //鼠标滚动时把顶部导航加sticky
     window.onscroll = function (scroll) {
       if (window.scrollY > 0) {
         topNavBar.classList.add('sticky')
       } else {
         topNavBar.classList.remove('sticky')
       }
+        findClosest()
+    }
       //滚到哪里顶部导航栏高亮
-    let specialTags = document.querySelectorAll('[data-x]')
-    let minIndex = 0
-    for (let i = 1; i < specialTags.length; i++) {
-      if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
-        minIndex = i
+      function findClosest() {
+        let specialTags = document.querySelectorAll('[data-x]')
+        let minIndex = 0
+        for (let i = 1; i < specialTags.length; i++) {
+          if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
+            minIndex = i
+          }
+        }
+        specialTags[minIndex].classList.remove('offset')
+        for (let i = 0; i < specialTags.length; i++) {
+          specialTags[i].classList.remove('highlight')
+        }
+        specialTags[minIndex].classList.add('highlight')
+        let id = specialTags[minIndex].id
+        console.log(id)
+        let a = document.querySelector('[href = "#' + id + '"]')
+        let li = a.parentNode
+        let brotherAndMe = li.parentNode.children
+        for (let i = 0; i < brotherAndMe.length; i++) {
+          brotherAndMe[i].classList.remove('highlight')
+        }
+        li.classList.add('highlight')
       }
-    }
-    console.log(minIndex)
-    for (let i = 0; i < specialTags.length; i++) {
-      specialTags[i].classList.remove('highlight')
-    }
-    specialTags[minIndex].classList.add('highlight')
-    let id = specialTags[minIndex].id
-    console.log (id)
-    let a = document.querySelector('[href = "#' + id + '"]')
-    let li = a.parentNode
-    let brotherAndMe = li.parentNode.children
-    for (let i = 0; i < brotherAndMe.length; i++) {
-      brotherAndMe[i].classList.remove('highlight')
-    }
-    li.classList.add('highlight')
-    }
+    
     //鼠标移到顶部导航，给li添加active
     let liTags = document.querySelectorAll('nav.menu > ul > li')
     for (let i = 0; i < liTags.length; i++) {
@@ -263,7 +274,7 @@
         let s = targetTop - currentTop
         var coords = { y: currentTop };    //当前起始位置
         var t = Math.abs((s / 100) * 300)
-        if (t > 500) {t = 500}
+        if (t > 500) { t = 500 }
         var tween = new TWEEN.Tween(coords)  // 起始位置
           .to({ y: targetTop }, t)       //结束位置，时间
           .easing(TWEEN.Easing.Quadratic.InOut) //缓动类型
