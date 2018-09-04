@@ -3,17 +3,9 @@
 
 <head>
   <title>我的个人简历</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css">
   <link rel="stylesheet" href="./style.css">
   <script src="//at.alicdn.com/t/font_764409_v8rjz10njnd.js"></script>
-  <style type="text/css">
-    .icon {
-      width: 1em;
-      height: 1em;
-      vertical-align: -0.15em;
-      fill: currentColor;
-      overflow: hidden;
-    }
-  </style>
 </head>
 
 <body>
@@ -41,13 +33,13 @@
             </ul>
           </li>
           <li>
-            <a href="#">博客</a>
+            <a href="#siteBlog">博客</a>
           </li>
           <li>
-            <a href="#">日历</a>
+            <a href="#siteMessage">留言</a>
           </li>
           <li>
-            <a href="#">联系方式</a>
+            <a href="#siteRelation">联系方式</a>
           </li>
           <li>
             <a href="#">其他</a>
@@ -163,42 +155,21 @@
   </section>
   <section data-x id="siteWorks" class="portfolio">
     <h2>作品集</h2>
-    <nav>
-      <ol class="clearfix">
-        <li id="portfolio1">所有</li>
-        <li id="portfolio2">框架</li>
-        <li id="portfolio3">原生JS&amp;CSS</li>
-      </ol>
-      <div id="portfolioBar" class=" bar state-1">
-        <div class="bar-inner"></div>
+    <!-- 轮播作品区 -->
+    <div class="swiper-container">
+      <!-- 截图后放这里 -->
+      <div class="swiper-wrapper">
+        <img class="swiper-slide">
+        <img class="swiper-slide">
+        <img class="swiper-slide">
       </div>
-    </nav>
-    <script>
-      portfolio1.onclick = function () {
-        portfolioBar.className = "bar state-1"
-      }
-      portfolio2.onclick = function () {
-        portfolioBar.className = "bar state-2"
-      }
-      portfolio3.onclick = function () {
-        portfolioBar.className = "bar state-3"
-      }
-    </script>
-    <!-- 作品区 -->
-    <div class="works">
-      <div class="big">
-        <img src="./img/big.jpg" alt="作品1">
-      </div>
-      <div class="small">
-        <img src="./img/small1.jpg" alt="作品2">
-      </div>
-      <div class="small" style="left: 634px;top: 298px;">
-        <img src="./img/small2.jpg" alt="作品3">
-      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-button-next"></div>
     </div>
-
   </section>
-  <section id="message">
+
+  <section class="message">
     <h2>留言</h2>
     <ol></ol>
     <form action="" method="post">
@@ -207,93 +178,16 @@
       <input type="submit">
     </form>
   </section>
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
-  <script>  
-    //添加offset类
-    let specialTags = document.querySelectorAll('[data-x]')
-    for (let i = 0; i < specialTags.length; i++) {
-      specialTags[i].classList.add('offset')
-    }
-    findClosest()
+  <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
 
-    //鼠标滚动时把顶部导航加sticky
-    window.onscroll = function (scroll) {
-      if (window.scrollY > 0) {
-        topNavBar.classList.add('sticky')
-      } else {
-        topNavBar.classList.remove('sticky')
-      }
-        findClosest()
-    }
-      //滚到哪里顶部导航栏高亮
-      function findClosest() {
-        let specialTags = document.querySelectorAll('[data-x]')
-        let minIndex = 0
-        for (let i = 1; i < specialTags.length; i++) {
-          if (Math.abs(specialTags[i].offsetTop - window.scrollY) < Math.abs(specialTags[minIndex].offsetTop - window.scrollY)) {
-            minIndex = i
-          }
-        }
-        specialTags[minIndex].classList.remove('offset')
-        for (let i = 0; i < specialTags.length; i++) {
-          specialTags[i].classList.remove('highlight')
-        }
-        specialTags[minIndex].classList.add('highlight')
-        let id = specialTags[minIndex].id
-        console.log(id)
-        let a = document.querySelector('[href = "#' + id + '"]')
-        let li = a.parentNode
-        let brotherAndMe = li.parentNode.children
-        for (let i = 0; i < brotherAndMe.length; i++) {
-          brotherAndMe[i].classList.remove('highlight')
-        }
-        li.classList.add('highlight')
-      }
-    
-    //鼠标移到顶部导航，给li添加active
-    let liTags = document.querySelectorAll('nav.menu > ul > li')
-    for (let i = 0; i < liTags.length; i++) {
-      liTags[i].onmouseenter = function (x) {
-        x.currentTarget.classList.add('active')
-        // let brother = li.getElementsByTagName('ul')[0]
-        // brother.classList.add('active')
-      }
-      liTags[i].onmouseleave = function (x) {
-        x.currentTarget.classList.remove('active')
-        // let brother = li.getElementsByTagName('ul')[0]
-        // brother.classList.remove('active')
-      }
-    }
-    let aTags = document.querySelectorAll('nav.menu > ul > li > a')
-    function animate(time) {
-      requestAnimationFrame(animate);
-      TWEEN.update(time);
-    }
-    requestAnimationFrame(animate);
-    for (let i = 0; i < aTags.length; i++) {
-      aTags[i].onclick = function (x) {
-        x.preventDefault()        //浏览器阻止默认动作，不自动跳动页面
-        let a = x.currentTarget
-        let href = a.getAttribute('href')   //a.getAttribute('href')获取显示用户写的地址，浏览器不做处理
-        let element = document.querySelector(href)
-        let top = element.offsetTop
-
-        let currentTop = window.scrollY
-        let targetTop = top - 80
-        let s = targetTop - currentTop
-        var coords = { y: currentTop };    //当前起始位置
-        var t = Math.abs((s / 100) * 300)
-        if (t > 500) { t = 500 }
-        var tween = new TWEEN.Tween(coords)  // 起始位置
-          .to({ y: targetTop }, t)       //结束位置，时间
-          .easing(TWEEN.Easing.Quadratic.InOut) //缓动类型
-          .onUpdate(function () {
-            window.scrollTo(0, coords.y)     //如何更新界面
-          })
-          .start();
-      }
-    }
-  </script>
+  <script src="./main-js/init-swiper.js"></script>
+  <script src="./main-js/auto-slide-up.js"></script>
+  <script src="./main-js/sticky-topbar.js"></script>
+  <script src="./main-js/smoothly-nav.js"></script>
+  <script src="./main-js/message.js"></script>
 </body>
 
 </html>
