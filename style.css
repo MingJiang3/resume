@@ -251,7 +251,8 @@ svg.icon{
     padding-top: 58px;
 }
 section.skills,
-section.portfolio{
+section.portfolio,
+section.message{
     max-width: 930px;
     margin-right: auto;
     margin-left: auto;
@@ -310,4 +311,18 @@ section.portfolio .swiper-container{
 .swiper-container{
     width: 800px;
     height: 525px;
+}
+section.message> ol{
+    margin: 0px auto;
+    max-width: 700px;
+    border: 1px solid red;
+
+}
+section.message> ol>li{
+    background: white;
+    margin: 5px 0;
+    padding: 5px 0;
+}
+#postMessageForm{
+    text-align: center
 }
