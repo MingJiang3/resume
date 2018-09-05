@@ -48,7 +48,7 @@
     bindEvents: function () {
       this.form.addEventListener('submit', (e) => {
         e.preventDefault()
-        this.saveMessage
+        this.saveMessage()
       })
     },
     saveMessage: function () {
@@ -64,6 +64,7 @@
       })
     }
   }
+  console.log('1')
   controller.init(view, model)
 }.call()
 
