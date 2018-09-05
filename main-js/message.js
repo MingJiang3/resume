@@ -1,12 +1,12 @@
 !function () {
   var view = document.querySelector('section.message')
   var model = {
+    // 获取数据
     init: function () {
       var APP_ID = 'LvGf85PnKyDeY32xFvDBFpRA-gzGzoHsz';
       var APP_KEY = 'I4j1SbFgMqCV3rC7n4bRdm3v';
       AV.init({ appId: APP_ID, appKey: APP_KEY })
     },
-    // 获取数据
     fetch: function () {
       var query = new AV.Query('message');
       return query.find()
@@ -15,7 +15,7 @@
     save: function (name, content) {
       var Message = AV.Object.extend('message');
       var message = new Message();
-      message.save({
+      return message.save({
         'content': content,
         'name': name
       })
@@ -39,17 +39,17 @@
         let array = message.map((item) => item.attributes)
         array.forEach((item) => {
           let li = document.createElement('li')
-          li.innerText = `${item.name}:${item.content}`
+          li.innerText = `${item.name}: ${item.content}`
           this.messageList.appendChild(li)
         })
       }
       )
     },
     bindEvents: function () {
-      this.form.addEventListener('submit', function (e) {
+      this.form.addEventListener('submit', (e) => {
         e.preventDefault()
         this.saveMessage
-      }.bind(this))
+      })
     },
     saveMessage: function () {
       let myForm = this.form
