@@ -260,7 +260,8 @@ section.message{
 }
 section.skills > h2, 
 section.portfolio > h2,
-section.message > h2{
+section.message > h2,
+section.Blog > h2{
     text-align: center;
     color: #3d4451;
     font-size: 34px;
@@ -297,25 +298,47 @@ section.skills .progressBar{
 section.skills .progressBar .progress{
     height: 5px;
     background: #e8676b;
-    width: 70%;
     border-radius: 2px;
     transform: translateX(0);
     transition: all 1s;
+}
+section.skills .progressBar .progress.Html{
+    width: 80%;
+}
+section.skills .progressBar .progress.JavaS{
+    width: 70%;
+}
+section.skills .progressBar .progress.JQu{
+    width: 60%;
+}
+section.skills .progressBar .progress.vue{
+    width: 70%;
+}
+section.skills .progressBar .progress.Http{
+    width: 40%;
+}
+section.skills .progressBar .progress.react{
+    width: 20%;
 }
 section.skills.offset .progress{
     transform: translateX(-100%)
 }
 section.portfolio .swiper-container{
-    margin-top: 30px;
+    /* margin-top: 30px; */
 }
 .swiper-container{
-    width: 800px;
-    height: 525px;
+    margin-top: 30px;
+    display: flex;
+    width: 940px;
+    height: 445px;
+    box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.5);
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
+
 section.message> ol{
     margin: 0px auto;
     max-width: 800px;
-
 }
 section.message> ol>li{
     background: #ffffff;
@@ -324,8 +347,18 @@ section.message> ol>li{
     padding-bottom: 10px;
     padding-left: 50px;
     border-radius: 10px;
-
 }
 #postMessageForm{
-    text-align: center
+    text-align: center;
+    margin-top: 38px;
+}
+.message h2,
+.Blog h2{
+    margin-bottom: 26px;
+}
+.Blog{
+    margin-top: 96px;
+}
+.projectImage{
+    margin: 0 auto ;
 }

@@ -26,24 +26,17 @@
           </li>
           <li class="menuTigger">
             <a href="#siteWorks">作品</a>
-            <ul class="submenu">
-              <li>作品1</li>
-              <li>作品2</li>
-              <li>作品3</li>
-            </ul>
-          </li>
-          <li>
-            <a href="#siteBlog">博客</a>
           </li>
           <li>
             <a href="#siteMessage">留言</a>
           </li>
           <li>
-            <a href="#siteRelation">联系方式</a>
+            <a href="#siteBlog">博客</a>
           </li>
           <li>
-            <a href="#">其他</a>
+            <a href="#siteRelation">联系方式</a>
           </li>
+          
         </ul>
       </nav>
     </div>
@@ -76,16 +69,18 @@
             <dd>457918455@qq.com</dd>
             <dt>手机</dt>
             <dd>15931878778</dd>
+            <dt>学校</dt>
+            <dd>河北大学</dd>
           </dl>
         </div>
       </div>
       <footer class="media">
-        <a href="#">
+        <a href="https://www.jianshu.com/u/db660b10c349">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-jianshu_circle"></use>
           </svg>
         </a>
-        <a href="#">
+        <a href="https://github.com/MingJiang3">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-github"></use>
           </svg>
@@ -103,7 +98,7 @@
       </footer>
     </div>
     <p id="downloadResume-wrapper">
-      <a class="downloadResume" href="#" target="_blank" download>DOWNLOAD RESUME</a>
+      <a class="downloadResume" href="./李名江的简历.pdf" target="_blank" download>DOWNLOAD RESUME</a>
     </p>
     <!-- 技能 -->
   </main>
@@ -113,40 +108,40 @@
       <li>
         <h3>HTML 5 &amp; CSS 3</h3>
         <div class="progressBar">
-          <div class="progress"></div>
+          <div class="progress Html"></div>
         </div>
       </li>
       <li>
         <h3>JavaScript</h3>
         <div class="progressBar">
-          <div class="progress"></div>
+          <div class="progress JavaS"></div>
         </div>
       </li>
       <li>
         <h3>jQuery</h3>
         <div class="progressBar">
-          <div class="progress"></div>
+          <div class="progress JQu"></div>
         </div>
       </li>
 
       <li>
         <h3>Vue.js</h3>
         <div class="progressBar">
-          <div class="progress"></div>
+          <div class="progress vue"></div>
         </div>
       </li>
 
       <li>
         <h3>HTTP</h3>
         <div class="progressBar">
-          <div class="progress"></div>
+          <div class="progress Http"></div>
         </div>
       </li>
 
       <li>
         <h3>React.js</h3>
         <div class="progressBar">
-          <div class="progress"></div>
+          <div class="progress react"></div>
         </div>
       </li>
 
@@ -155,37 +150,46 @@
   </section>
   <section data-x id="siteWorks" class="portfolio">
     <h2>作品集</h2>
-    <!-- 轮播作品区 -->
     <div class="swiper-container">
-      <!-- 截图后放这里 -->
-      <div class="swiper-wrapper">
-        <img class="swiper-slide">
-        <img class="swiper-slide">
-        <img class="swiper-slide">
-      </div>
-      <div class="swiper-pagination"></div>
-      <div class="swiper-button-prev"></div>
-      <div class="swiper-button-next"></div>
+      <div class="projectImage"><img src="./img/big.jpg" width="310" height="220px"></div>
+      <div class="projectImage"><img src="./img/big.jpg" width="310" height="220px"></div>
+      <div class="projectImage"><img src="./img/big.jpg" width="310" height="220px"></div>
+      <div class="projectImage"><img src="./img/big.jpg" width="310" height="220px"></div>
+      <div class="projectImage"><img src="./img/big.jpg" width="310" height="220px"></div>
+      <div class="projectImage"><img src="./img/big.jpg" width="310" height="220px"></div>
     </div>
   </section>
   <!-- 留言板 -->
-  <section class="message">
+  <section data-x id="siteMessage" class="message">
     <h2>留言</h2>
     <ol id="messageList"></ol>
-    <form action="#" method="post" id="postMessageForm">
+    <form action="#" method="post" id="postMessageForm"  class="postMessageForm">
       <label for="">名称</label>
       <input type="text" name="name">
       <label for="">内容</label>
-      <input type="text" name="content">
+      <input type="textarea" name="content" width="50px" height="20px">
       <input type="submit">
     </form>
   </section>
+  <!-- 博客 -->
+  <section data-x id="siteBlog" class="Blog">
+    <h2>Blog</h2>
+    <a href="https://www.jianshu.com/u/db660b10c349">
+      <div>
+        <div class="projectImage"><img src="./img/移动页面.png" width="800" height="155px"></div>
+        <div class="projectImage"><img src="./img/css.png" width="800" height="155px"></div>
+        <div class="projectImage"><img src="./img/cookie.png" width="800" height="155px"></div>
+        <div class="projectImage"><img src="./img/css布局.png" width="800" height="155px"></div>
+      </div>
+    </a>
+  </section>
+
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tween.js/16.3.5/Tween.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/leancloud-storage@3.10.0/dist/av-min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/js/swiper.min.js"></script> -->
 
-  <script src="./main-js/init-swiper.js"></script>
+  <!-- <script src="./main-js/init-swiper.js"></script> -->
   <script src="./main-js/auto-slide-up.js"></script>
   <script src="./main-js/sticky-topbar.js"></script>
   <script src="./main-js/smoothly-nav.js"></script>

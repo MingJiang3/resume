@@ -24,7 +24,6 @@
         }
         specialTags[minIndex].classList.add('highlight')
         let id = specialTags[minIndex].id
-        // console.log(id)
         let a = document.querySelector('[href = "#' + id + '"]')
         let li = a.parentNode
         let brotherAndMe = li.parentNode.children

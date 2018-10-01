@@ -64,7 +64,6 @@
       })
     }
   }
-  console.log('1')
   controller.init(view, model)
 }.call()
 
