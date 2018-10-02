@@ -375,14 +375,14 @@ section.message> ol>li{
     font-size: 18px;
     margin-top: 10px;
 }
-footer{
-    margin-top: 76px;
+.lastFooter{
+    margin-top: 150px;
     margin-bottom: 0px;
     background: gray;
     padding: 10px 0;
     text-align: center;
 }
- .qq{
+.qq{
     margin-left: 146px;
 } 
 .email{
