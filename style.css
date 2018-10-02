@@ -252,7 +252,8 @@ svg.icon{
 }
 section.skills,
 section.portfolio,
-section.message{
+section.message,
+section.Relations{
     max-width: 930px;
     margin-right: auto;
     margin-left: auto;
@@ -261,7 +262,8 @@ section.message{
 section.skills > h2, 
 section.portfolio > h2,
 section.message > h2,
-section.Blog > h2{
+section.Blog > h2,
+section.Relations > h2 {
     text-align: center;
     color: #3d4451;
     font-size: 34px;
@@ -353,12 +355,36 @@ section.message> ol>li{
     margin-top: 38px;
 }
 .message h2,
-.Blog h2{
+.Blog h2,
+.Relations h2{
     margin-bottom: 26px;
 }
 .Blog{
     margin-top: 96px;
 }
-.projectImage{
-    margin: 0 auto ;
+.projectImages{
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
 }
+
+
+.Relation{
+    text-align: center;
+    font-size: 18px;
+    margin-top: 10px;
+}
+footer{
+    margin-top: 76px;
+    margin-bottom: 0px;
+    background: gray;
+    padding: 10px 0;
+    text-align: center;
+}
+ .qq{
+    margin-left: 146px;
+} 
+.email{
+    margin-left: 59px;
+} 
