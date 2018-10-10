@@ -319,8 +319,8 @@ section.skills .progressBar .progress.vue{
 section.skills .progressBar .progress.Http{
     width: 40%;
 }
-section.skills .progressBar .progress.react{
-    width: 20%;
+section.skills .progressBar .progress.mina{
+    width: 60%;
 }
 section.skills.offset .progress{
     transform: translateX(-100%)
